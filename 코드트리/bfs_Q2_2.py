@@ -4,10 +4,6 @@ n = int(input())
 r1, c1, r2, c2 = map(int, input().split())
 r1, c1, r2, c2 = r1-1, c1-1, r2-1, c2-1
 
-# grid = [
-#     list(map(int, input().split()))
-#     for _ in range(n)
-# ]
 
 visited = [
     [False for _ in range(n)]
