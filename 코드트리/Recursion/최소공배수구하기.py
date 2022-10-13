@@ -1,15 +1,16 @@
+# 최소 공배수 뜻을 제대로 몰랐었다...
+# 최소 공배수 = a * b // gcd(최대공약수)
+
+def lcm(a, b):
+    for i in range(min(a, b), a*b+1):
+        if i % a == 0 and i % b == 0:
+            return i
+
 def solve(n):
     if n == 0:
         return arr[0]
-    print(f"{arr[n - 1]}, {arr[n]}")
-    if max(arr[n-1], arr[n]) % min(arr[n-1], arr[n]) != 0:
-        print("first")
-        return solve(n-1) * arr[n]
-    else:
-        print("second")
-        return solve(n-1)
+    return lcm(solve(n-1), arr[n])
 
-ans = 0
 n = int(input())
 arr = list(map(int, input().split()))
 print(solve(n-1))
