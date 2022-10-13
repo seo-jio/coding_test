@@ -1,36 +1,37 @@
 T = int(input())
-count = 0
-
-
-grid = [
-    [0] * T
-    for _ in range(T)
-]
 
 dxs = [0, 1, 0, -1]
 dys = [1, 0, -1, 0]
 
 def in_range(x, y):
-    global T
-    return x >= 0 and x < T and y >= 0 and y < T
+    return x >= 0 and x < n and y >= 0 and y < n
 
-def solve(test_case, x, y):
-    if count == T * T:
-        return
+def solve(n):
+    grid = [
+        [0] * n
+        for _ in range(n)
+    ]
     x, y = 0, 0
-    grid[x][y] = count
-    for dx, dy in zip(dxs, dys):
-        nx, ny = x + dx, y + dy
-        if in_range(nx, ny):
-            x, y = nx, ny
-            count += 1
-            break
-    solve(test_case, nx, ny)
+    dir_num = 0
+    count = 1
+
+    while count <= n*n:
+        grid[x][y] = count
+        nx, ny = x + dxs[dir_num], y + dys[dir_num]
+        if not in_range(nx, ny) or grid[nx][ny] != 0:
+            dir_num = (dir_num + 1) % 4
+            nx, ny = x + dxs[dir_num], y + dys[dir_num]
+        x, y = nx, ny
+        count += 1
+
+    for row in grid:
+        for elem in row:
+            print(elem, end=" ")
+        print()
+
 
 for test_case in range(1, T + 1):
-    solve(test_case, 0, 0)
+    n = int(input())
+    print(f"#{test_case}")
+    solve(n)
 
-for row in grid:
-    for elem in row:
-        print(elem, end=" ")
-    print()
