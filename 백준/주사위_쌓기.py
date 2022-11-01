@@ -29,19 +29,14 @@ def cal_sum(idx, prt_idx, cnt):
 
 max_sum = 0
 for i in range(6):
-    partners = []
-    partners.append(dices[0][i])
     partner_idx = find_partner_idx(i, 0)
     partner = dices[0][partner_idx]
     cur_sum = 0
     cur_sum += cal_sum(i, partner_idx, 0)
     for j in range(1, n): #주사위 개수 만큼 반복
-        partners.append(partner)
         idx = dices[j].index(partner)
         partner_idx = find_partner_idx(idx, j)
         partner = dices[j][partner_idx]
         cur_sum += cal_sum(idx, partner_idx, j)
     max_sum = max(max_sum, cur_sum)
-    # print(partners)
-    # print(cur_sum)
 print(max_sum)
