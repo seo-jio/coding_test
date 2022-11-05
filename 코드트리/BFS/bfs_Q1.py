@@ -39,6 +39,11 @@ visited[0][0] = True
 q.append((0, 0))
 bfs()
 
+for row in grid:
+    for elem in row:
+        print(elem, end=' ')
+    print()
+
 if visited[n-1][m-1] == True:
     print(1)
 else:
