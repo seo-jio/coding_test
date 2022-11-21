@@ -1,3 +1,4 @@
+#테케 2개 통과 못함
 import math
 
 def swap_num(front, back): #idx가 들어온다.

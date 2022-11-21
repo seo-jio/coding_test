@@ -1,3 +1,4 @@
+#bfs로 하다가 포기
 from collections import deque
 import math
 
