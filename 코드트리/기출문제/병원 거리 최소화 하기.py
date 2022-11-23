@@ -1,3 +1,4 @@
+#backtracking으로도 풀 수 있음.
 from itertools import combinations
 import math
 
