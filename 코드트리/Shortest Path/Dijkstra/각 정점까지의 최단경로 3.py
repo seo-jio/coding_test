@@ -7,7 +7,7 @@ def dijkstra(start):
         for j in range(1, n+1): #최소 dist값을 갖는 노드 선택
             if visited[j]: #방문했던 노드라면 넘어감
                 continue
-            if min_idx == -1 or dist[min_idx] > dist[j]: #첫 for문이거나
+            if min_idx == -1 or dist[min_idx] > dist[j]: #최소 dist를 갖는 노드 선택
                 min_idx = j
 
         visited[min_idx] = True #방문 처리
