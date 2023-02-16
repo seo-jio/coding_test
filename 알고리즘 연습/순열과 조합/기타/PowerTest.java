@@ -1,3 +1,4 @@
+package 기타;
 //부분집합, nC0+nC1+...nCn= 2^n
 public class PowerTest {
     static int [] p= {1,2,3,4,5};

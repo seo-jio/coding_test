@@ -1,7 +1,12 @@
+package 기타;
+import java.util.ArrayList;
 import java.util.Arrays;
 
-//중복 조합
-public class ReCombiTest {
+import java.util.Arrays;
+import java.util.List;
+
+//nCr
+public class CombiTest {
     static int [] p= {1,2,3,4,5};
     static int N=p.length;
     static int R;
@@ -32,7 +37,7 @@ public class ReCombiTest {
         for (int i = start; i < N; i++) {
             visited[i]=true;  //생략 가능
             nums[cnt] = p[i];
-            combi(cnt+1, i); // 중복 조합이기 때문에 두 번째 인자가 그냥 i이다!!!
+            combi(cnt+1, i+1); //다음수를 뽑기 위해 뽑은 주사위수 1증가 and 시도할 원소 시작 인데스 1 증가, stat+1이 아니다!!
             visited[i]=false; // 생략 가능
         }
     }

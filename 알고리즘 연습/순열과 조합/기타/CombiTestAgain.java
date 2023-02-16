@@ -1,31 +1,38 @@
+package 기타;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 
-// 중복순열
-public class RePermTest {
+public class CombiTestAgain {
 
     static int[] p = {1, 2, 3, 4, 5, 6};
     static int N = p.length;
     static int R;
     static int totCnt;
     static int[] nums;
+    static boolean[] visited;
 
     public static void main(String[] args) {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         R = 3;
         nums = new int[R];
+        visited = new boolean[N];
 
-        perm(0);
+        comb(0, 0);
         System.out.printf("cnt : %d", totCnt);
     }
 
-    public static void perm(int cnt){
+    public static void comb(int cnt, int start){
         if(cnt == R){
             totCnt++;
             System.out.println(Arrays.toString(nums));
             return;
         }
-        for(int i=0; i<N; i++){
+        for(int i=start; i<N; i++){
+            visited[i] = true;
             nums[cnt] = p[i];
-            perm(cnt+1);
+            comb(cnt+1, i+1);
+            visited[i] = false;
         }
     }
 }

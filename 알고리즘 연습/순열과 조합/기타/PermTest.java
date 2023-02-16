@@ -1,3 +1,4 @@
+package 기타;
 import java.util.Arrays;
 
 //nPr
