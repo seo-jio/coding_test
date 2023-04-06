@@ -1,16 +1,16 @@
-package ì •ë¦¬;
+package Á¤¸®;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-//ë¶€ë¶„ ì§‘í•©
+//ºÎºĞ ÁıÇÕ
 public class SubSetTest {
     static int[] P = {1, 2, 3, 4, 5};
     static int N = P.length;
     static int R;
     static int count;
-    static boolean[] visited; //depthë¥¼ ì°¾ì„ ë•ŒëŠ” intë¡œ í•˜ëŠ” ê²½ìš°ë„ ìˆë‹¤.
+    static boolean[] visited; //depth¸¦ Ã£À» ¶§´Â int·Î ÇÏ´Â °æ¿ìµµ ÀÖ´Ù.
 
     public static void main(String[] args) {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -21,7 +21,7 @@ public class SubSetTest {
         System.out.println(count);
     }
 
-    //ifë¬¸ì— ê²°ê³¼ë¥¼ ê³¨ë¼ë‚¼ ë¿ ì‹¤í–‰ ìì²´ëŠ” N^R ë°˜ë³µí•˜ì§€ë§Œ
+    //if¹®¿¡ °á°ú¸¦ °ñ¶ó³¾ »Ó ½ÇÇà ÀÚÃ¼´Â N^R ¹İº¹ÇÏÁö¸¸
     private static void subSet(int cnt, int sum, int mul){
         if(cnt == N){
             count++;
