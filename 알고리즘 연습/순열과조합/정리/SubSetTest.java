@@ -4,13 +4,13 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
-//�κ� ����
+//부분 집합
 public class SubSetTest {
     static int[] P = { 1, 2, 3, 4, 5 };
     static int N = P.length;
     static int R;
     static int count;
-    static boolean[] visited; // depth�� ã�� ���� int�� �ϴ� ��쵵 �ִ�.
+    static boolean[] visited; // depth를 찾을 때는 int로 하는 경우도 있다.
 
     public static void main(String[] args) {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -21,7 +21,7 @@ public class SubSetTest {
         System.out.println(count);
     }
 
-    // if���� ����� ��� �� ���� ��ü�� N^R �ݺ�������
+    // if문에 결과를 골라낼 뿐 실행 자체는 N^R 반복하지만
     private static void subSet(int cnt, int sum, int mul) {
         if (cnt == N) {
             count++;
